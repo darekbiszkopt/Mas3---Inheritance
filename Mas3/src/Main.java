@@ -1,7 +1,14 @@
+import Dynamic.Developer;
 import Multi.Amphicar;
 import Multi.Boat;
 import Multi.Car;
+import MultiAspect.Paycheck;
+import MultiAspect.PaymentMethod;
+import MultiAspect.Transaction;
+import MultiAspect.Transfer;
 import Overlaping.Account;
+
+import java.util.ArrayList;
 
 
 public class Main {
@@ -46,7 +53,42 @@ public class Main {
 
         // MultiAspect
 
+//        Paycheck paycheck = new Paycheck(
+//                Transaction.createCashTransaction(300, "National", "PL"),
+//                "Warsaw");
+//
+//        Transfer transfer = new Transfer(
+//                Transaction.createCardNumberTransaction(300, "National", "400-222-2115"),
+//                true
+//        );
+//
+//        System.out.println(paycheck);
+//        System.out.println(transfer);
 
+        // Dynamic
+        var skillsArray1 = new ArrayList<String>();
+        skillsArray1.add("Java");
+        skillsArray1.add("Sql");
 
+        var skillsArray2 = new ArrayList<String>();
+        skillsArray2.add("JS");
+        skillsArray2.add("Angular");
+        skillsArray2.add("Java");
+        skillsArray2.add("Spring");
+        Developer juniorDeveloper = Developer.makeDeveloperToJunior(skillsArray1, 8000, true);
+        juniorDeveloper.setFirsJob(false);
+        System.out.println(juniorDeveloper);
+
+        Developer seniorDeveloper = Developer.makeDeveloperSenior(skillsArray2, 16000, 1);
+        seniorDeveloper.setContractTimeInYears(3);
+
+        System.out.println(seniorDeveloper);
+
+//
+//        var skillsArray = new ArrayList<String>();
+//        skillsArray.add("JS");
+//        skillsArray.add("Angular");
+//        skillsArray.add("Java");
+//        skillsArray.add("Spring");
     }
 }
